@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Titanic Survival</title>
+    <script src="http://mbostock.github.com/d3/d3.v2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<style>
+
+body {
+  width: 980px;
+  margin: 0 auto;
+}
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: grey;
+        shape-rendering: crispEdges;
+    }
+
+    .chart d {
+        fill: white;
+        font: 100px sans-serif;
+        text-anchor: end;
+}
+</style>
+
+<body>
+    <script>
+        var width = 1000,
+            height = 900,
+            margin = 150;
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + 100)
+            .attr("height", height);
+
+        //scales
+        var x = d3.scale
+            .linear()
+            .domain([0, 85])
+            .range([margin, width - margin]);
+        var y = d3.scale
+            .linear()
+            .domain([0, 550])
+            .range([height - margin, margin]);
+        var r = d3.scale
+            .linear()
+            .domain([0, 8])
+            .range([5, 50]);
+
+        // These control the color inside the ciricles
+
+        var color = d3.scale
+            .ordinal()
+            .range(["#1e90ff", "df99a5"]);
+        var stroke = d3.scale
+            .ordinal()
+            .range(["#ff0000", "#008000"]);
+
+        //axis
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + (height - margin) + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(" + margin + ",0)")
+            .call(yAxis);
+
+//label axis
+        svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "end")
+            .attr("x", width / 2)
+            .attr("y", height - margin / 1.5)
+            .text("Age (years)");
+
+        svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", margin / 2)
+            .attr("x", -height / 2.5)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text("Fare (currency units)");
+
+// title
+        svg.append("text")
+            .attr("class", "graph title")
+            .attr("x", 25)
+            .attr("y", 80)
+            .text("Impact of Sex, Age and Fare on Surviving the Titanic")
+            .style("font-size", "30px" );
+
+// Load in data and plot points
+        d3.csv("titanic_data.csv", function(csv) {
+            svg.selectAll("circle")
+                .data(csv)
+                .enter()
+                .append("circle")
+                .attr("cx", function(d) {
+                    return x(80 * Math.random());
+                })
+                .attr("cy", function(d) {
+                    return y(500 * Math.random());
+                })
+                .attr("r", function(d) {
+                    return r(Math.sqrt(10 * Math.random()));
+                })
+                .style("fill", function(d) {
+                    return color(d.Sex);
+                })
+                .style("opacity", 1.0)
+                .style("stroke-opacity", 1)
+                .style("stroke-width", 3)
+                .style("stroke", function(d) {
+                    return stroke(d.Survived)
+                });
+
+// moving the bubble points to their true x-y positions
+            svg.selectAll("circle")
+                .transition().duration(2000)
+                .attr("cx", function(d) {
+                    return x(+d.Age);
+                })
+                .attr("cy", function(d) {
+                    return y(+d.Fare);
+                })
+                .attr("r", function(d) {
+                    return r(Math.sqrt(+d.FamSize));
+                })
+                .style("opacity", 0.3);
+
+// transition delay to highlight female survival rate increase with increased fare.
+
+            svg.selectAll("circle")
+                .transition().delay(1000).duration(8000)
+                .style("opacity", function(d) {
+                    if (d["Sex"] == "male") {
+                        return 0;
+                    } else if (d["Sex"] == "female" && d["Fare"] > 50) {
+                        return 0.8;
+                    } else if (d["Sex"] == "female" && d["Fare"] <= 50) {
+                        return 0.2;
+                    }
+                })
+                .attr("r", 5);
+
+//LEGENDS, DESCRIPTIONS, ANNOTATIONS, ETC.
+            var radius = 5,
+                multiplier = 2;
+
+            var legend = svg.append("g")
+                .attr("class", "legend")
+                .attr("transform", "translate(" + (width - 120) + "," + 200 + ")")
+                .selectAll("g")
+                .data(["Female, Survived", "Female, Died", "Male, Survived", "Male, Died"])
+                .enter()
+                .append("g");
+
+            legend.append("circle")
+                .attr("cy", function(d, i) {
+                    return i * 30;
+                })
+                .attr("r", radius)
+                .style("fill", function(d) {
+                    if (d == "Female, Survived") {
+                        return color("female");
+                    } else if (d == "Female, Died") {
+                        return color("female");
+                    } else if (d == "Male, Survived") {
+                        return color("male");
+                    } else if (d == "Male, Died") {
+                        return color("male");
+                    }
+                })
+                .style("stroke", function(d) {
+                    if (d == "Female, Survived") {
+                        return "#008000";
+                    } else if (d == "Female, Died") {
+                        return "#ff0000";
+                    } else if (d == "Male, Survived") {
+                        return "#008000";
+                    } else if (d == "Male, Died") {
+                        return "#ff0000";
+                    }
+                })
+                .style("stroke-width", 3)
+                .transition().delay(4000).duration(2000)
+                .style("opacity", function(d) {
+                    if (d == "Female, Survived") {
+                        return 0.8;
+                    } else if (d == "Female, Died") {
+                        return 0.8;
+                    } else if (d == "Male, Survived") {
+                        return 0;
+                    } else if (d == "Male, Died") {
+                        return 0;
+                    }
+                });
+
+            legend.append("text")
+                .attr("y", function(d, i) {
+                    return i * 30 + 5;
+                })
+                .attr("x", radius * 2.5)
+                .text(function(d) {
+                    return d;
+                })
+                .transition().delay(4000).duration(2000)
+                .style("opacity", function(d) {
+                    if (d == "Female, Survived") {
+                        return 1;
+                    } else if (d == "Female, Died") {
+                        return 1;
+                    } else if (d == "Male, Survived") {
+                        return 0;
+                    } else if (d == "Male, Died") {
+                        return 0;
+                    }
+                });
+
+        })
+    </script>
+
+</body>
+
+</html>
