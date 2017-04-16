@@ -28,3 +28,7 @@ Data visualization of Titanic survival using D3
 	1     1     0        A/5 21171  7.2500              S
 	2     1     0         PC 17599 71.2833   C85        C
 	3     0     0 STON/O2. 3101282  7.9250              S
+
+
+![Passenger Survival by Sex]
+(https://cloud.githubusercontent.com/assets/11824911/25071456/cc041516-2285-11e7-81b3-2afd2afd0f4f.png)
