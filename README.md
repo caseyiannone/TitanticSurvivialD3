@@ -1,5 +1,8 @@
 # TitanticSurvivialD3
-Data visualization of Titanic survival using D3
+
+## Initial Review of Titanic Data
+
+Working through some of the submission in the Kaggle Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset.
 
 ### Layout of Titanic Data: 'data.frame':	891 obs. of  12 variables:
 	 $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
@@ -51,16 +54,25 @@ Data visualization of Titanic survival using D3
 
 
 
-### D3 Mockups in R
+## D3 Mockups in R
 
-I begin the process of exploring 
+Now that I have an understanding of the data I'd like to see how I can combine as many varibles as possible into a single visulization.
+
+### Passenger Survival by Sex
 
 ![Passenger Survival by Sex](https://cloud.githubusercontent.com/assets/11824911/25071456/cc041516-2285-11e7-81b3-2afd2afd0f4f.png)
 
-
+### Passenger Survival by Sex, Age, and Fare Paid
 ![Proposed D3 Visulization](https://cloud.githubusercontent.com/assets/11824911/25071465/55006edc-2286-11e7-8d83-dd19f7f78e16.png)
 
+This visulization provides the most information (five variables) into a single visulziation, which will provide our viewer with the best understanding as to what impacted survival rates of the Titanic.
+
+
 ## Initial D3 Visulization
+
+### Design Concept
+
+While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points, 
 
 [Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
 
@@ -80,4 +92,19 @@ I begin the process of exploring
 * Have consistent point size and increase point size slightly, as the larger points are too big and make it difficult to distinguish individual points.
 * Shift title further to the top left corner, as people's eye begin their naturally and I want them to have that context first.
 
+## Final D3 Visulization
+
 [Titanic D3 Visulization After Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
+
+
+## Resources 
+
+[Udacity D3 Course](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
+[Kaggle Titanic Competition](https://www.kaggle.com/c/titanic)
+[D3 Docs](https://d3js.org/)
+[Let's Make a Bar Chart by: Mike Bostock's](https://bost.ocks.org/mike/bar/2/)
+[Bl.ocks Gist](https://bl.ocks.org/-/about)
+[Manipulating Data Like a Boss with D3](http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/)
+
+
+
