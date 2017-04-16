@@ -72,11 +72,11 @@ This visulization provides the most information (five variables) into a single v
 
 ### Design Concept
 
-While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points with fares paid over $50 to demostrate the proportion of   
+While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points with fares paid over $50 to demostrate the overall impact on survival. I also want to include some randomness into this plot as well, so that each time the visulization is refreshed the the same points will be seen in a new light to reinforce the impact.
 
 [Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
 
-#### Main Points of Feedback from Others:
+#### Main Points of Feedback Recieved from 3 Individuals:
 * Overall speed of visulization shift is too fast to see how the data is actually changining.
 	* Visulization streched too wide to take in all information before shift. 
 * Some of the visulization information is cut off by overall size of graph. 
@@ -96,6 +96,10 @@ While in the R visulization we are able see some stark differences among the mal
 
 [Titanic D3 Visulization After Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
 
+### Summary of Visulization
+
+* Proportionaly, female passengers were more likely to survivie than male passengers.
+* Proportionaly, female passengers that paid a higher fare were had a higher rate of survival than female passengers that paid lower fares.
 
 ## Resources 
 
