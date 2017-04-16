@@ -51,12 +51,33 @@ Data visualization of Titanic survival using D3
 
 
 
+### D3 Mockups in R
 
+I begin the process of exploring 
 
 ![Passenger Survival by Sex](https://cloud.githubusercontent.com/assets/11824911/25071456/cc041516-2285-11e7-81b3-2afd2afd0f4f.png)
 
 
 ![Proposed D3 Visulization](https://cloud.githubusercontent.com/assets/11824911/25071465/55006edc-2286-11e7-8d83-dd19f7f78e16.png)
 
+## Initial D3 Visulization
+
 [Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
+
+#### Main Points of Feedback from Others:
+* Overall speed of visulization shift is too fast to see how the data is actually changining.
+	* Visulization streched too wide to take in all information before shift. 
+* Some of the visulization information is cut off by overall size of graph. 
+* Scaling of visulization was confusing.
+	* Is the scaling done to represent a third point?
+* Hard to distinguish male vs female points.
+	
+#### My Own Self-Reflection:
+* Don't like the background color. Would prefer a more simplistic view of the visulization, like the theme_few in R.
+* I should remove more text so a viewer's focus is completely on the shifting data points. I can explain what is happening in the summary.
+* Data points appear to not be correctly plotted based on what these points look like in my R plots. I need to adjust the scaling.
+* Add in Bootstrap formatting to have cleaner text.
+* Have consistent point size and increase point size slightly, as the larger points are too big and make it difficult to distinguish individual points.
+* Shift title further to the top left corner, as people's eye begin their naturally and I want them to have that context first.
+
 [Titanic D3 Visulization After Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
