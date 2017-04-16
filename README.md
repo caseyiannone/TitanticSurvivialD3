@@ -2,7 +2,7 @@
 
 ## Initial Review of Titanic Data
 
-Working through some of the submission in the Kaggle Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset.
+Working through some of the submissions in the Kaggle Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset.
 
 ### Layout of Titanic Data: 'data.frame':	891 obs. of  12 variables:
 	 $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
@@ -66,7 +66,6 @@ Now that I have an understanding of the data I'd like to see how I can combine a
 ![Proposed D3 Visulization](https://cloud.githubusercontent.com/assets/11824911/25071465/55006edc-2286-11e7-8d83-dd19f7f78e16.png)
 
 This visulization provides the most information (five variables) into a single visulziation, which will provide our viewer with the best understanding as to what impacted survival rates of the Titanic.
-
 
 ## Initial D3 Visulization
 
