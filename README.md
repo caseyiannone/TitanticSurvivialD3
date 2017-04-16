@@ -58,5 +58,5 @@ Data visualization of Titanic survival using D3
 
 ![Proposed D3 Visulization](https://cloud.githubusercontent.com/assets/11824911/25071465/55006edc-2286-11e7-8d83-dd19f7f78e16.png)
 
-
-<script src="https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93.js"></script>
+[Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
+[Titanic D3 Visulization After Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
