@@ -100,10 +100,15 @@ While in the R visulization we are able see some stark differences among the mal
 ## Resources 
 
 [Udacity D3 Course](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
+
 [Kaggle Titanic Competition](https://www.kaggle.com/c/titanic)
+
 [D3 Docs](https://d3js.org/)
+
 [Let's Make a Bar Chart by: Mike Bostock's](https://bost.ocks.org/mike/bar/2/)
+
 [Bl.ocks Gist](https://bl.ocks.org/-/about)
+
 [Manipulating Data Like a Boss with D3](http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/)
 
 
