@@ -72,7 +72,7 @@ This visulization provides the most information (five variables) into a single v
 
 ### Design Concept
 
-While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points, 
+While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points with fares paid over $50 to demostrate the proportion of   
 
 [Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
 
