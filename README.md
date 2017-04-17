@@ -56,7 +56,7 @@ Working through some of the submissions in the Kaggle Titanic competition it was
 
 ## D3 Mockups in R
 
-Now that I have an understanding of the data I'd like to see how I can combine as many varibles as possible into a single visulization.
+Now that I have an understanding of the data I'd like to see how I can combine as many varibles as possible into a single visulization with the intent to showcase that women who paid a fare of $50 + survived in greater proportion than women overall.
 
 ### Passenger Survival by Sex
 
@@ -82,6 +82,7 @@ While in the R visulization we are able see some stark differences among the mal
 * Scaling of visulization was confusing.
 	* Is the scaling done to represent a third point?
 * Hard to distinguish male vs female points.
+* Adjusted the opacity to show all female passengers compared to my target group of female passengers who paid $50+ so viwers can more easily compare that subset to the larger group of female passengers. 
 	
 #### My Own Self-Reflection:
 * Don't like the background color. Would prefer a more simplistic view of the visulization, like the theme_few in R.
@@ -97,8 +98,7 @@ While in the R visulization we are able see some stark differences among the mal
 
 ### Summary of Visulization
 
-* Proportionaly, female passengers were more likely to survivie than male passengers.
-* Proportionaly, female passengers that paid a higher fare were had a higher rate of survival than female passengers that paid lower fares.
+* Proportionaly, female passengers that paid a higher fare were had a higher rate of survival than female passengers that paid lower fares. (Which is showcased by the visulization, as was the goal)
 
 ## Resources 
 
