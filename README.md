@@ -82,7 +82,7 @@ While in the R visulization we are able see some stark differences among the mal
 * Scaling of visulization was confusing.
 	* Is the scaling done to represent a third point?
 * Hard to distinguish male vs female points.
-* Adjusted the opacity to show all female passengers compared to my target group of female passengers who paid $50+ so viwers can more easily compare that subset to the larger group of female passengers. 
+* If trying to show comparison regrading survival of all female passengers to female passengers that paid $50+ you should adjust the opacity of female passengers that paid less than $50 for comparison.  
 	
 #### My Own Self-Reflection:
 * Don't like the background color. Would prefer a more simplistic view of the visulization, like the theme_few in R.
