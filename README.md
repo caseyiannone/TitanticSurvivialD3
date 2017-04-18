@@ -82,7 +82,7 @@ While in the R visulization we are able see some stark differences among the mal
 * Scaling of visulization was confusing.
 	* Is the scaling done to represent a third point?
 * Hard to distinguish male vs female points.
-* If trying to show comparison regrading survival of all female passengers to female passengers that paid $50+ you should adjust the opacity of female passengers that paid less than $50 for comparison.  
+
 	
 #### My Own Self-Reflection:
 * Don't like the background color. Would prefer a more simplistic view of the visulization, like the theme_few in R.
@@ -94,7 +94,19 @@ While in the R visulization we are able see some stark differences among the mal
 
 ## Final D3 Visulization
 
-[Titanic D3 Visulization After Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
+[Titanic D3 Visulization After Recieveing Reviewer Feeback from First Submission](http://bl.ocks.org/caseyiannone/raw/c8e4d2649bd04cc4637400af1c176c79/)
+
+[Final Titanic D3 Visulization](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
+
+**Things that have Changed between these submissions:**
+
+* If trying to show comparison regrading survival of all female passengers to female passengers that paid $50+ you should adjust the opacity of female passengers that paid less than $50 for comparison.
+	* Adjusted the titles and descriptions
+	* Corrected scaling of points to reflect true x/y positions of passenegers
+	* Adjusted opacity so viewer can see female passenegers that did not pay $50+ dollars for their tickets so as to compare them to the female passengers that did.
+	* Adjusted randomizer to increase visability into the differences between female passengers that paid $50+ and those that did not.
+	* Adjusted timing of transitions to better aligned with visluzation best practices so viewer cues to main points of visluzing differences among female passengers.
+	* Removed male legend componets so viewer only focuses on differences among female passenegers.
 
 ### Summary of Visulization
 
