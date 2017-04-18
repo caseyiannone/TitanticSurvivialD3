@@ -2,7 +2,7 @@
 
 ## Initial Review of Titanic Data
 
-Working through some of the submissions in the Kaggle Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset.
+Working through some of the submissions in Kaggle's Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset with the end goal of using some combination of these variables to create an explanatory data visualization.
 
 ### Layout of Titanic Data: 'data.frame':	891 obs. of  12 variables:
 	 $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
@@ -56,7 +56,7 @@ Working through some of the submissions in the Kaggle Titanic competition it was
 
 ## D3 Mockups in R
 
-Now that I have an understanding of the data I'd like to see how I can combine as many varibles as possible into a single visulization with the intent to showcase that women who paid a fare of $50 + survived in greater proportion than women overall.
+Now that I have an understanding of the data I'd like to see how I can combine as many varibles as possible into a single visulization with the intent to showcase that female passenegrs who paid a fare of $50 + survived in greater proportion to female passengers overall.
 
 ### Passenger Survival by Sex
 
@@ -106,11 +106,11 @@ While in the R visulization we are able see some stark differences among the mal
 	* Adjusted opacity so viewer can see female passenegers that did not pay $50+ dollars for their tickets so as to compare them to the female passengers that did.
 	* Adjusted randomizer to increase visability into the differences between female passengers that paid $50+ and those that did not.
 	* Adjusted timing of transitions to better aligned with visluzation best practices so viewer cues to main points of visluzing differences among female passengers.
-	* Removed male legend componets so viewer only focuses on differences among female passenegers.
+	* Removed male legend componets so viewer's focus is soley on female passengers and the differce aomng those who paid $50+ and those that did not.
 
 ### Summary of Visulization
 
-* Proportionaly, female passengers that paid a higher fare were had a higher rate of survival than female passengers that paid lower fares. (Which is showcased by the visulization, as was the goal)
+* Proportionaly, female passengers that paid a higher fare had a higher rate of survival than female passengers that paid lower fares. (Which is showcased by the visulization, as was the goal)
 
 ## Resources 
 
