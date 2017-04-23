@@ -4,6 +4,23 @@
 
 Working through some of the submissions in Kaggle's Titanic competition it was evident that sex, age, and fare have the largest impact on surviving the Titanic. With this in mind I begin by exploring the makeup of the dataset with the end goal of using some combination of these variables to create an explanatory data visualization.
 
+
+#### *Data Dictionary*
+Variable |Definition | Key 
+---------- | --------------
+survival |	Survival |	0 = No, 1 = Yes
+pclass |	Ticket class |	1 = 1st, 2 = 2nd, 3 = 3rd
+sex |	Sex 	
+Age |	Age in years 	
+sibsp |	# of siblings / spouses aboard the Titanic 	
+parch |	# of parents / children aboard the Titanic 	
+ticket| 	Ticket number 	
+fare |	Passenger fare 	
+cabin |	Cabin number 	
+embarked |	Port of Embarkation |	C = Cherbourg, Q = Queenstown, S = Southampton
+
+
+
 ### Layout of Titanic Data: 'data.frame':	891 obs. of  12 variables:
 	 $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
 	 $ Survived   : int  0 1 1 1 0 0 0 0 1 1 ...
