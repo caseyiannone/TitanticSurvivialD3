@@ -123,11 +123,14 @@ With my new direction in trying to provide as much clarity as possible around th
 
 #### *AgeGroup*
 df$AgeGroup[df$Age < 15] <- 'Child'
+
 df$AgeGroup[df$Age > 15 & df$Age <= 60] <- 'Middle Aged'
+
 df$AgeGroup[df$Age >= 60] <- 'Elder'
 
 #### *FareGroup*
 df$FareGroup[df$Fare < 50] <- 'Under 50'
+
 df$FareGroup[df$Fare >= 50] <- 'Over 50'
 
 ### Chart Selections:
