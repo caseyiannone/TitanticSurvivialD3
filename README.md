@@ -60,7 +60,9 @@ Now that I have an understanding of the data I'd like to see how I can combine a
 
 ### Passenger Survival by Sex
 
-![Passenger Survival by Sex](https://cloud.githubusercontent.com/assets/11824911/25071456/cc041516-2285-11e7-81b3-2afd2afd0f4f.png)
+![Passenger Survival by Sex Histogram](https://cloud.githubusercontent.com/assets/11824911/25071456/cc041516-2285-11e7-81b3-2afd2afd0f4f.png)
+
+![Passenger Survival by Sex Mosaicplot](https://cloud.githubusercontent.com/assets/11824911/25318305/a0a4e3b2-2859-11e7-852d-47f101f3c6e8.png)
 
 ### Passenger Survival by Sex, Age, and Fare Paid
 ![Proposed D3 Visulization](https://cloud.githubusercontent.com/assets/11824911/25071465/55006edc-2286-11e7-8d83-dd19f7f78e16.png)
@@ -71,7 +73,8 @@ This visulization provides the most information (five variables) into a single v
 
 ### Design Concept
 
-While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. With D3 we can add in transitional elements to help viewers tease out these patterns. So we start with all data points, move on to female only points with fares paid over $50 to demostrate the overall impact on survival. I also want to include some randomness into this plot as well, so that each time the visulization is refreshed the the same points will be seen in a new light to reinforce the impact.
+While in the R visulization we are able see some stark differences among the male and female faceted grid I want to combine this into a single visulziation. However, putting all of these data points into a single visual will make it hard for viewers to distinguish overall patterns. My initial idea was to map five variables into a single visulization, which was my . After further reflection and feedback from my Udacity reviewer I decided to create a dashoard to better explain survival on the Titanic in a more clear manner. From my review in R I decided that I will focus on three main variables: age, fare and sex. Based upon my exploration in R and what others have found in from reading the Kaggle blog, these three factors were major contributors that impacted a passengers survival rate on the Titanic.
+
 
 [Titanic D3 Visulization Before Recieveing Feedback](https://bl.ocks.org/caseyiannone/dd9b5fcdd2140af221ffa2df22296d2c)
 
@@ -92,11 +95,9 @@ While in the R visulization we are able see some stark differences among the mal
 * Have consistent point size and increase point size slightly, as the larger points are too big and make it difficult to distinguish individual points.
 * Shift title further to the top left corner, as people's eye begin their naturally and I want them to have that context first.
 
-## Final D3 Visulization
+## Single D3 Visulization
 
-[Titanic D3 Visulization After Recieveing Reviewer Feeback from First Submission](http://bl.ocks.org/caseyiannone/raw/c8e4d2649bd04cc4637400af1c176c79/)
-
-[Final Titanic D3 Visulization](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
+[Titanic D3 Visulization AFter Recieveing Feedback](https://bl.ocks.org/caseyiannone/66ea1eba759e5d6fd2ca8d0bffb02f93)
 
 **Things that have Changed between these submissions:**
 
@@ -108,15 +109,48 @@ While in the R visulization we are able see some stark differences among the mal
 	* Adjusted timing of transitions to better aligned with visluzation best practices so viewer cues to main points of visluzing differences among female passengers.
 	* Removed male legend componets so viewer's focus is soley on female passengers and the differce aomng those who paid $50+ and those that did not.
 
-### Summary of Visulization
+## Revisions After Udacity Submission
 
-* Proportionaly, female passengers that paid a higher fare had a higher rate of survival than female passengers that paid lower fares. (Which is showcased by the visulization, as was the goal)
+### Summary of Dashboard
+
+In the tragic sinking of the Titanic, 68% of the passengers on board perished. However, there is a large difference in the chance of survival across passenger sex as well as in age and fare paid. This data visualizations aim to emphasis the difference survival chance across categories, so that the viewers can compare it easily. Moreover, interactive chart allows the viewers to explore the category of interest on their own.
+
+![Final D3 Submission: Titanic Dashboard](https://cloud.githubusercontent.com/assets/11824911/25318340/69da55aa-285a-11e7-85f8-ee84891730c5.gif)
+
+
+### Data Cleaning
+With my new direction in trying to provide as much clarity as possible around these three variables, I decided to create two new variables (FareGroup and AgeGroup). I created these two variables to better showcase the stark differences in the respectives groups for each variable so my audience can more easily distinguish what is taking place in the visual.
+
+#### *AgeGroup*
+df$AgeGroup[df$Age < 15] <- 'Child'
+df$AgeGroup[df$Age > 15 & df$Age <= 60] <- 'Middle Aged'
+df$AgeGroup[df$Age >= 60] <- 'Elder'
+
+#### *FareGroup*
+df$FareGroup[df$Fare < 50] <- 'Under 50'
+df$FareGroup[df$Fare >= 50] <- 'Over 50'
+
+### Chart Selections:
+
+I decided to move away from using a scatter plot to present multiple points, as the feedback was given by reviewer that scatter plots can be difficult to interupt for some viewers and aren't typically used in explanatory visualization. 
+
+##### Survival Rate by Age Group Chart
+* Bar chart is easy to understand and good for comparison. So a bar chart is used to show the differences across passenger sex.
+	* I use color to present whether one was survived or perished and passenger sex.
+##### Survival Rate by Passenger Sex & Survival Rate by Passenger Sex & Fare Paid Charts
+* Stacked 100% bar chart are used to show the comparison of the chance of survival for AgeGroup and FareGroup.
+	* Stacked bar chart uses color to encode another category of data.
+		* I use it to present whether one was survived or perished in the Survival Rate by Passenger Sex chart.
+		* I use it to present whether one was survived or perished and passenger sex in the Survival Rate by Passenger Sex & Fare Paid chart.
+
 
 ## Resources 
 
 [Udacity D3 Course](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
 
 [Kaggle Titanic Competition](https://www.kaggle.com/c/titanic)
+
+[Dimple JS](http://dimplejs.org/)
 
 [D3 Docs](https://d3js.org/)
 
