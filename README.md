@@ -164,6 +164,9 @@ I decided to move away from using a scatter plot to present multiple points, as 
 		* I use it to present whether one was survived or perished and passenger sex in the Survival Rate by Passenger Sex & Fare Paid chart.
 
 
+![Final D3 Submission: Version 2](https://cloud.githubusercontent.com/assets/11824911/25363114/4b639222-2926-11e7-8b56-4f82893d3363.png)
+
+
 ## Resources 
 
 [Udacity D3 Course](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
