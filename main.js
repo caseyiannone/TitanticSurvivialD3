@@ -30,6 +30,36 @@
        myChart.addCategoryAxis("x", ["FareGroup", "Sex"]);
        myChart.addPctAxis("y", "Passengers");
        myChart.addSeries("Survived", dimple.plot.bar);
-       myChart.addLegend(200, 10, 380, 20, "right");
+       myChart.addLegend(200, 10, 390, 20, "right");
+       svg3.append("text")
+                .attr("x", 500)
+                .attr("y", 380)
+                .style("text-anchor", "middle")
+                .style("font-family", "sans-serif")
+                .style("font-size", "65%")
+                .text("female");
+                svg3.append("text")
+                         .attr("x", 390)
+                         .attr("y", 380)
+                         .style("text-anchor", "middle")
+                         .style("font-family", "sans-serif")
+                         .style("font-size", "65%")
+                         .text("male");
+                         svg3.append("text")
+                                  .attr("x", 240)
+                                  .attr("y", 380)
+                                  .style("text-anchor", "middle")
+                                  .style("font-family", "sans-serif")
+                                  .style("font-size", "65%")
+                                  .text("female");
+                                  svg3.append("text")
+                                           .attr("x", 140)
+                                           .attr("y", 380)
+                                           .style("text-anchor", "middle")
+                                           .style("font-family", "sans-serif")
+                                           .style("font-size", "65%")
+                                           .text("male");
+
        myChart.draw();
+
      });
